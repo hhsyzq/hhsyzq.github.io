@@ -319,6 +319,192 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/06/使用hexo搭建个人博客/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Simth">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小站">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/01/06/使用hexo搭建个人博客/" class="post-title-link" itemprop="url">使用hexo搭建个人博客</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-01-06 14:43:41 / Modified: 11:56:26" itemprop="dateCreated datePublished" datetime="2019-01-06T14:43:41+00:00">2019-01-06</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/建站日志/" itemprop="url" rel="index"><span itemprop="name">建站日志</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h1><p>本人是纯粹的技术小白，前一段时间在折腾路由器，不停的从网上找各种教程进行学习。然后就不停的复制、粘贴各种命令来进行部署。然后就突然有一股冲动，感觉自己也可以来做一个博客，而且网上现成的教程一堆应该不会有什么太高的门槛，于是就有了这下面的折腾。</p>
+<h1 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h1><h2 id="为什么选择hexo"><a href="#为什么选择hexo" class="headerlink" title="为什么选择hexo"></a>为什么选择hexo</h2><p>一开始本来考虑是WordPress的，看了教程感觉还是简单，不过实在是不想在VPS上再安装一个数据库；再加上hexo的教程看起来也不是很复杂，都是静态页面可以直接部署在GitHub上，于是就选择了hexo。</p>
+<h2 id="本地安装Hexo"><a href="#本地安装Hexo" class="headerlink" title="本地安装Hexo"></a>本地安装Hexo</h2><h3 id="虚拟机安装Ubuntu"><a href="#虚拟机安装Ubuntu" class="headerlink" title="虚拟机安装Ubuntu"></a>虚拟机安装Ubuntu</h3><p>嗯，没错！我先在虚拟机里面装了个Ubuntu，打算在里面安装Hexo，这样就算玩脱了也最多是重来，不会影响电脑的正常使用。后面的本地操作全部在虚拟机的系统中进行的。</p>
+<h3 id="安装GIT"><a href="#安装GIT" class="headerlink" title="安装GIT"></a>安装GIT</h3><p>首先需要在系统中安装git：<code>sudo apt install git</code><br>可以先检查是否安装git：<code>git --version</code></p>
+<h3 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h3><p>安装nodejs：<code>sudo apt install nodejs</code><br>还需安装npm(nodejs的包管理工具)：<code>sudo apt install npm</code></p>
+<blockquote>
+<p>这里有坑，网上的教程很多，不过都没有sudo的命令，然后我安装的时候各种报错。加上sudo就没有问题了。</p>
+</blockquote>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>安装hexo包：<code>sudo npm install -g hexo-cli</code></p>
+<blockquote>
+<p>同上，网上的教程都没有看见sudo的要求，然后安装到最后报错。</p>
+</blockquote>
+<p>指定一个文件夹存放你的Blog文件（也就是根目录）<br><code>hexo init blog</code> blog为我的的文件夹地址，在这个地址里生成Hexo初始化文件<br><code>cd blog</code> 进入这个文件夹<br><code>npm install</code> 在文件夹内自动安装Hexo所依赖的各种模块<br><code>hexo server</code> 启动本地服务器，可以添加参数-p指定服务器的端口，默认在端口4000</p>
+<h2 id="github部署"><a href="#github部署" class="headerlink" title="github部署"></a>github部署</h2><ol>
+<li>先注册一个github账户。（<em>不写代码的我也有一个Github账户了</em>）</li>
+<li>打开个人的profile，点击右上角的+，new一个repository（新建一个仓库），注意，要将你的repository name设置为[username.github.io]，这一步很重要。然后其它的不用管，直接create repository。</li>
+<li>本地系统配置Git<br> <code>git config --global user.name &quot;username&quot;</code><br> <code>git config --global user.email &quot;youremail&quot;</code></li>
+<li>配置ssh keys，使用：<code>ssh-keygen -t rsa -C &quot;youremail&quot;</code>，在你的用户目录下找到.ssh目录中的id_rsa.pub的内容，也就是你本机ssh公钥，在settings中打开SSH and GPG keys，new一个ssh key。在下面的输入框中填写的你本机的ssh公钥，然后点击添加。</li>
+<li>验证：<code>ssh -T git@github.com</code>，看到successfully就说明配置完成了。</li>
+<li>在博客根目录下，安装一个扩展<code>npm install hexo-deployer-git --save</code></li>
+<li>打开本地博客根目录下的博客配置文件_config.yml，在这里你可以修改与博客相关的各种信息。修改配置：<br> deploy:<br>   type: git<br>   repository: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:”username”/“username”.github.io.git<br>   branch: master</li>
+</ol>
+<h2 id="博客部署完成"><a href="#博客部署完成" class="headerlink" title="博客部署完成"></a>博客部署完成</h2><p>这样个人博客就算是基本部署完成了，可以先在本地运行<code>hexo g</code>（等同于<code>hexo generate</code>）和<code>hexo g</code>（等同于<code>hexo server</code>），就可以访问 <a href="http://127.0.0.1:4000" target="_blank" rel="noopener">http://127.0.0.1:4000</a> 看到刚刚部署的博客了。<br>再运行<code>hexo d</code>（等同于<code>hexo deploy</code>）就会部署到Github仓库了，之后再访问 https://“username”.github.io 就可以看见了。至于怎么写博客，以后有空再说。</p>
+<h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><p>写这篇总结的时候感觉好像过程并不复杂，总共就只有几行命令，但是对于我这种小白来说，步步都是坑，整个过程中我经历了出错——Google——出错的多次循环，不过总算是成功了。</p>
+<blockquote>
+<p>写这篇文章又经历了markdown语法的坑，以后有空了在写一篇。</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/05/测试博客/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -653,7 +839,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -680,8 +866,6 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
-                    
-                      
                     
                       
                     
